@@ -1,0 +1,4 @@
+import React from 'react'
+import type { Grid } from '@/core/types'
+type Props={ grid:Grid; selection:string|null }
+export default function Inspector({grid,selection}:Props){ if(!selection) return <div className="content hint">Select a cell to inspect.</div>; const c=grid.cells[selection]; if(!c) return <div className="content hint">Invalid selection.</div>; return (<div className="content"><div className="row"><div style={{minWidth:80}}>Cell</div><div className="mono">{selection}</div></div><div className="row"><div style={{minWidth:80}}>Block</div><div className="mono">{c.block ?? '—'}</div></div><div className="row"><div style={{minWidth:80}}>Rot</div><div className="mono">{c.rot}°</div></div><pre className="mono" style={{ background:'#0f172a', padding:8, borderRadius:8, border:'1px solid #273244', overflow:'auto' }}>{JSON.stringify(c.meta ?? {}, null, 2)}</pre></div>) }

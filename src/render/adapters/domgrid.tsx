@@ -1,0 +1,5 @@
+import React from 'react'
+type Props={ grid:{w:number; h:number}; cellSize:number; showGrid?:boolean; renderCell:(x:number,y:number)=>React.ReactNode; onMouseUp?:React.MouseEventHandler<HTMLDivElement>; onMouseDown?:React.MouseEventHandler<HTMLDivElement>; onMouseMove?:React.MouseEventHandler<HTMLDivElement> }
+export default function DomGrid(props:Props){ const {grid,cellSize,showGrid}=props; const cells:React.ReactNode[]=[]; for(let y=0;y<grid.h;y++){ for(let x=0;x<grid.w;x++){ cells.push(<div key={`${x},${y}`} style={{width:cellSize,height:cellSize}}>{props.renderCell(x,y)}</div>) } }
+  return <div className={`grid ${showGrid?'with-grid':''}`} onMouseUp={props.onMouseUp} onMouseLeave={props.onMouseUp} onMouseDown={props.onMouseDown} onMouseMove={props.onMouseMove} style={{display:'grid', gridTemplateColumns:`repeat(${grid.w}, ${cellSize}px)`, gridTemplateRows:`repeat(${grid.h}, ${cellSize}px)`, width: grid.w*cellSize, height: grid.h*cellSize, gap:0, ['--cell' as any]: `${cellSize}px`}}>{cells}</div>
+}
