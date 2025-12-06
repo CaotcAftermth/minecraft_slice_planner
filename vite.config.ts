@@ -2,6 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
-  base: './', // change to '/<repo>/' for GitHub Pages
+  base: '/minecraft_slice_planner/',
   resolve: { alias: { '@': '/src' } }
 })
