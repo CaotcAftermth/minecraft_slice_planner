@@ -1,0 +1,1 @@
+{"root":["./src/main.tsx","./src/blocks/index.ts","./src/core/history.ts","./src/core/registry.ts","./src/core/types.ts","./src/render/sprites.ts","./src/render/adapters/domgrid.tsx","./src/ui/App.tsx","./src/ui/GridView.tsx","./src/ui/Inspector.tsx","./src/ui/Palette.tsx","./src/ui/SettingsModal.tsx"],"errors":true,"version":"5.9.3"}
